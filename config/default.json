@@ -1,0 +1,4 @@
+{
+    "port": 5000, 
+    "connectionstring": "mongodb+srv://admin:admin@cluster0.dphmrco.mongodb.net/?retryWrites=true&w=majority"
+}
