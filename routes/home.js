@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const router = Router()
 const Optium = require('../models/Optium')
+const User = require('../models/User')
 
 router.get('/',async(req, res)=>{
     const optiums = await Optium.find({}).lean()
@@ -12,8 +13,14 @@ router.get('/',async(req, res)=>{
 router.get('/admin',async(req, res)=>{
     res.render('admin', {title: 'OptiumStariy'})
 })
-router.get('/login',async(req, res)=>{
-    res.render('login', {title: 'Login'})
+router.post('/login',async(req, res)=>{
+    
+    const user = new User({
+        Login: req.body.Login,
+        Password: req.body.Password
+    })
+    await user.save()
+    res.redirect('/')
 })
 router.post('/createproduct',async(req, res)=>{
     const optium = new Optium({
