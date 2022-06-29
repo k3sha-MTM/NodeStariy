@@ -1,6 +1,7 @@
 const config = require('config')
 const express= require('express')
 const mongoose = require('mongoose')
+const expresshandlebars = require('express-handlebars')
 const app=express()
 
 const PORT = config.get('port')
@@ -11,7 +12,7 @@ const hbs = expresshandlebars.create({
     defaultLayout: 'main',
     extname: 'hbs'
 })
-
+app.use(express.static("public"))
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
