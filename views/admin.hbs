@@ -1,4 +1,7 @@
 <h2>Admin</h2>
+
+
+
 <form action="/createproduct" method="post">
 
 <div class="input-field">
@@ -7,9 +10,20 @@
     <input type="text" name="Image" placeholder="optiums Image" >
 </div>
 <button type="submit" style="background-color:darkseagreen;" class="btn">Добавить Прицел</button>
-
-
 </form>
+
+
+<form style="margin-top: 70px;" action="/deleteproduct" method="post">
+    <select name="id" style="">
+         {{#if optiums.length}}
+        {{#each optiums}}
+        <option value="{{_id}}">{{Name}}</option>
+        {{/each}}
+        {{/if}}
+
+    </select>
+    <button type="submit" style="background-color: red; color: white" class="btn">Удалить прицел</button>
+    </form>
 
 
 

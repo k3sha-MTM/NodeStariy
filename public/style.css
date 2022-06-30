@@ -72,3 +72,10 @@
     margin-left: 100px;
     max-width: 2200px;
 }
+.logo{
+    background-color:rgb(131, 189, 109);
+    width: 2200px;
+    border-radius: 80px;
+    transition: 0.3s ease;
+    margin-left: 60px;
+}

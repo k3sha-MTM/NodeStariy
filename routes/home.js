@@ -11,7 +11,11 @@ router.get('/',async(req, res)=>{
     })
 })
 router.get('/admin',async(req, res)=>{
-    res.render('admin', {title: 'OptiumStariy'})
+    const optiums = await Optium.find({}).lean()
+    
+    res.render('admin', {
+        title: 'OptiumStariy', 
+        optiums})
 })
 router.post('/login',async(req, res)=>{
     
@@ -32,5 +36,13 @@ router.post('/createproduct',async(req, res)=>{
     await optium.save()
     res.redirect('/')
     //res.render('/', {title: 'Create Product'})
+})
+router.post('/deleteproduct',async(req, res)=>{
+
+    console.log(req.body.id)
+    const optium = await Optium.findById(req.body.id)
+    await optium.remove()
+    res.redirect('/admin')
+
 })
 module.exports = router
