@@ -26,7 +26,8 @@ router.post('/createproduct',async(req, res)=>{
     const optium = new Optium({
         Name: req.body.Name,
         Price: req.body.Price,
-        Image: req.body.Image
+        Image: req.body.Image,
+        ImageLogo: req.body.ImageLogo
     })
     await optium.save()
     res.redirect('/')
