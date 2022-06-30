@@ -11,11 +11,11 @@ router.get('/',async(req, res)=>{
     })
 })
 router.get('/admin',async(req, res)=>{
-    const optiums = await Optium.find({}).lean()
+    const optium = await Optium.find({}).lean()
     
     res.render('admin', {
         title: 'OptiumStariy', 
-        optiums})
+        optium})
 })
 router.post('/login',async(req, res)=>{
     
@@ -30,8 +30,8 @@ router.post('/createproduct',async(req, res)=>{
     const optium = new Optium({
         Name: req.body.Name,
         Price: req.body.Price,
-        Image: req.body.Image,
-        ImageLogo: req.body.ImageLogo
+        Image: req.body.Image
+     
     })
     await optium.save()
     res.redirect('/')
@@ -45,4 +45,5 @@ router.post('/deleteproduct',async(req, res)=>{
     res.redirect('/admin')
 
 })
+
 module.exports = router

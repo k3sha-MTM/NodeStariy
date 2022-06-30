@@ -79,3 +79,34 @@
     transition: 0.3s ease;
     margin-left: 60px;
 }
+.auth-stretched {
+    margin: 0 auto 0 auto;
+    background-color: #f1f3f4;
+    width: 100%;
+}
+.auth-container {
+    display: flex;
+    margin: 0 auto 0 auto;
+    justify-content: space-between;
+    background-color: #f1f3f4;
+    display: flex;
+    padding: 0 440px;
+    width: 100%;
+    max-width: 1920px;
+    flex-wrap: wrap;
+}
+.auth-section {
+    margin: 50px auto 180px auto;
+    width: 440px;
+    border-radius: 15px;
+}
+
+.auth-holder {
+    background-color: white;
+    width: 100%;
+    margin-top: 70px;
+    padding: 0 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.035);
+    padding-bottom: 20px;
+}
